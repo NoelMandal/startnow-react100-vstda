@@ -135,33 +135,4 @@ class App extends Component {
   }
 }
 
-// editForm() {
-//   return (
-//     <div className="alert alert-success font-weight-bold mb-0" role="alert">Description
-//               <textarea name="toDoText" className="form-control font-weight-normal" onChange={this.handleOnChange} value={this.state.input} rows="3">{this.state.input}</textarea>
-//       <br />
-//       Priority
-//               <div className="row">
-//         <div className="col-md-6">
-//           <select name="priority" className="custom-select mr-sm-2 text-muted font-weight-normal"
-//             value={this.state.priority} onChange="">
-//             <option>Select a Priority</option>
-//             <option value="1">I could do this later</option>
-//             <option vaqlue="2">Midkey Important</option>
-//             <option value="3">MUY IMPORTANTE!</option>
-//           </select>
-//         </div>
-//       </div>
-
-//       <button type="button" name="save" onClick={this.save} className="btn btn-success pull-right">Save</button>
-//     </div>
-//   );
-// }
-
-// var edits = null;
-// if (this.state.editing) {
-//   edits = this.editForm();
-// } else {
-//   edits = null;
-// }
 export default App;
