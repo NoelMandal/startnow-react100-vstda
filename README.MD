@@ -1,0 +1,1 @@
+This project uses React JS and Bootstrap to create an interactive "Very Simple To Do App" that is able to make a check list of things to do which can be edited and/or deleted 
