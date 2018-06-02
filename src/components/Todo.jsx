@@ -23,15 +23,19 @@ export default class Todo extends Component {
   }
 
   save() {
-    this.props.saveText(
-      {
-        description: this.refs.editedtext.value,
-        priority: this.state.newPriority
-      },
-      this.props.index
-    );
-    this.setState({ editing: false });
-    // new set state for input change
+    if (this.refs.editedtext.value != "" && this.state.newPriority != 0) {
+      this.props.saveText(
+        {
+          description: this.refs.editedtext.value,
+          priority: this.state.newPriority
+        },
+        this.props.index
+      );
+      this.setState({ editing: false });
+    } else {
+      alert("Missing Description or Priority");
+      return null;
+    }
   }
 
   remove() {
@@ -64,9 +68,9 @@ export default class Todo extends Component {
               value={this.state.newPriority}
               onChange={this.handleOnChange}
             >
-              <option>Select a Priority</option>
-              <option value="1">I could do this later</option>
-              <option value="2">Midkey Important</option>
+              <option value="0">Select a Priority</option>
+              <option value="1">Not Important</option>
+              <option value="2">Semi-Important</option>
               <option value="3">MUY IMPORTANTE!</option>
             </select>
           </div>

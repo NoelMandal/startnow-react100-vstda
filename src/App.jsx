@@ -22,11 +22,16 @@ class App extends Component {
 
   handleSubmit(event) {
     var newArray = this.state.todos.slice();
-    newArray.push({
-      description: this.state.description,
-      priority: this.state.priority
-    });
-    this.setState({ todos: newArray });
+    if (this.state.description != "" && this.state.priority != 0) {
+      newArray.push({
+        description: this.state.description,
+        priority: this.state.priority
+      });
+      this.setState({ todos: newArray });
+    } else {
+      alert("Missing Description or Priority");
+      return null;
+    }
   }
 
   eachComment(details, i) {
@@ -85,7 +90,7 @@ class App extends Component {
                   value={this.state.priority}
                   onChange={this.handleOnChange}
                 >
-                  <option>Select a Priority</option>
+                  <option value="0">Select a Priority</option>
                   <option value="1">Not Important</option>
                   <option value="2">Semi-Important</option>
                   <option value="3">MUY IMPORTANTE!</option>
